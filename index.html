@@ -39,6 +39,7 @@
             border-radius: 6px;
             font-size: 16px;
             box-sizing: border-box;
+            resize: none;
         }
         button {
             background-color: #007BFF;
@@ -100,28 +101,20 @@
     </div>
 
     <script>
-        async function sha256(message) {
-            const msgBuffer = new TextEncoder().encode(message);
-            const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
-            const hashArray = Array.from(new Uint8Array(hashBuffer));
-            return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
-        }
-
-        async function checkText() {
+        function checkText() {
             const textarea = document.getElementById('myInput');
             const inputArea = document.getElementById('input-area');
             const successMessage = document.getElementById('success-message');
             const mainTitle = document.getElementById('main-title');
-            
-            const cleanInput = textarea.value.trim();
-            const hashedInput = await sha256(cleanInput);
 
-            if (hashedInput === "f3f3366c88e5d0339d675661217e92823631890f5c128526e8550186524330d4") {
+            const userInput = textarea.value.replace(/\s+/g, '');
+
+            if (btoa(userInput) === "Q09MT1JT") {
                 inputArea.style.display = 'none';
                 mainTitle.style.display = 'none'; 
                 successMessage.style.display = 'block';
             } else {
-                alert("Incorrect code. Hint: Use all CAPS!");
+                alert("Incorrect code. Try again!");
             }
         }
     </script>
