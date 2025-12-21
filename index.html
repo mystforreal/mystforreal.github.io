@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Zone de saisie de texte</title>
+    <style>
+        /* Style pour centrer la boîte et la rendre jolie */
+        body {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f9;
+        }
+
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        textarea {
+            width: 300px;
+            height: 150px;
+            padding: 10px;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            resize: vertical; /* Permet à l'utilisateur de redimensionner la hauteur */
+            font-size: 16px;
+        }
+
+        textarea:focus {
+            border-color: #007BFF;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h3>Laissez un message :</h3>
+        <textarea placeholder="Tapez votre texte ici..."></textarea>
+    </div>
+
+</body>
+</html>
