@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Entrez le code secret !</title>
+    <title>Enter the Secret Code!</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             display: flex;
-            flex-direction: column; /* Aligne le titre et la carte verticalement */
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
@@ -15,7 +15,6 @@
             background-color: #eef2f3;
         }
 
-        /* Style pour le titre principal */
         h1 {
             color: #333;
             margin-bottom: 20px;
@@ -43,7 +42,7 @@
         }
 
         button {
-            background-color: #28a745;
+            background-color: #007BFF;
             color: white;
             border: none;
             padding: 12px 24px;
@@ -51,22 +50,4 @@
             cursor: pointer;
             font-size: 16px;
             font-weight: bold;
-            transition: transform 0.2s, background 0.3s;
-        }
-
-        button:hover {
-            background-color: #218838;
-            transform: scale(1.05);
-        }
-
-        #success-message {
-            display: none;
-            color: #28a745;
-            font-size: 32px;
-            font-weight: bold;
-            animation: pop 0.5s ease-out;
-        }
-
-        /* Petite animation pour l'apparition du message */
-        @keyframes pop {
-            0
+            transition: transform
