@@ -10,9 +10,10 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh; /* Changé en min-height pour permettre le scroll si besoin */
             margin: 0;
             background-color: #eef2f3;
+            padding: 20px;
         }
 
         h1 {
@@ -27,7 +28,8 @@
             border-radius: 12px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.1);
             text-align: center;
-            min-width: 320px;
+            width: 100%;
+            max-width: 560px; /* Aligné sur la largeur standard de la vidéo */
         }
 
         textarea {
@@ -51,11 +53,19 @@
             font-size: 16px;
             font-weight: bold;
             transition: transform 0.2s, background 0.3s;
+            margin-bottom: 20px;
         }
 
         button:hover {
             background-color: #0056b3;
             transform: scale(1.05);
+        }
+
+        .video-container {
+            margin-top: 10px;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #000;
         }
 
         #success-message {
@@ -81,6 +91,18 @@
             <textarea id="myInput" placeholder="Type the code here..."></textarea>
             <br>
             <button onclick="checkText()">Submit</button>
+            
+            <div class="video-container">
+                <iframe 
+                    width="100%" 
+                    height="315" 
+                    src="https://www.youtube.com/embed/AhzSJYcXtA4" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    allowfullscreen>
+                </iframe>
+            </div>
         </div>
 
         <div id="success-message">
