@@ -50,4 +50,60 @@
             cursor: pointer;
             font-size: 16px;
             font-weight: bold;
-            transition: transform
+            transition: transform 0.2s, background 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        #success-message {
+            display: none;
+            color: #28a745;
+            font-size: 32px;
+            font-weight: bold;
+            animation: pop 0.5s ease-out;
+        }
+
+        @keyframes pop {
+            0% { transform: scale(0.5); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+    <h1 id="main-title">Enter the Secret Code!</h1>
+
+    <div class="card">
+        <div id="input-area">
+            <textarea id="myInput" placeholder="Type the code here..."></textarea>
+            <br>
+            <button onclick="checkText()">Submit</button>
+        </div>
+
+        <div id="success-message">
+            Congratulations!
+        </div>
+    </div>
+
+    <script>
+        function checkText() {
+            const textarea = document.getElementById('myInput');
+            const inputArea = document.getElementById('input-area');
+            const successMessage = document.getElementById('success-message');
+            const mainTitle = document.getElementById('main-title');
+
+            if (textarea.value === "COLORS") {
+                inputArea.style.display = 'none';
+                mainTitle.style.display = 'none'; 
+                successMessage.style.display = 'block';
+            } else {
+                alert("Incorrect code. Hint: Use all CAPS!");
+            }
+        }
+    </script>
+
+</body>
+</html>
