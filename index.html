@@ -112,7 +112,9 @@
             const inputArea = document.getElementById('input-area');
             const successMessage = document.getElementById('success-message');
             const mainTitle = document.getElementById('main-title');
-            const hashedInput = await sha256(textarea.value);
+            
+            const cleanInput = textarea.value.trim();
+            const hashedInput = await sha256(cleanInput);
 
             if (hashedInput === "f3f3366c88e5d0339d675661217e92823631890f5c128526e8550186524330d4") {
                 inputArea.style.display = 'none';
